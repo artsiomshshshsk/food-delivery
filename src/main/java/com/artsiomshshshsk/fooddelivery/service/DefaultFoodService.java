@@ -5,6 +5,7 @@ import com.artsiomshshshsk.fooddelivery.repository.FoodRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DefaultFoodService implements FoodService{
@@ -18,5 +19,10 @@ public class DefaultFoodService implements FoodService{
     @Override
     public List<Food> listAllFood() {
         return foodRepository.findAll();
+    }
+
+    @Override
+    public Optional<Food> getFood(long id) {
+        return foodRepository.findById(id);
     }
 }
