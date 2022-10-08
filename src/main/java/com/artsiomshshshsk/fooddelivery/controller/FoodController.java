@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.stream.Collectors;
-
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
@@ -44,6 +42,5 @@ public class FoodController {
                 .orElseThrow(()->new NoSuchElementException("There is no such food"));
         return foodModelAssembler.toModel(food);
     }
-
 
 }
