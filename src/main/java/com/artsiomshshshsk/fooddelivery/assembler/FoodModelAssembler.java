@@ -2,7 +2,6 @@ package com.artsiomshshshsk.fooddelivery.assembler;
 
 import com.artsiomshshshsk.fooddelivery.controller.FoodController;
 import com.artsiomshshshsk.fooddelivery.domain.Food;
-import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;

@@ -14,6 +14,7 @@ import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DefaultOrderService implements OrderService {
@@ -56,12 +57,22 @@ public class DefaultOrderService implements OrderService {
         customerRepository.saveAndFlush(customer);
         orderItemRepository.saveAllAndFlush(orderItems);
 
+        System.out.println(orderWithId);
+
         return orderWithId;
     }
 
+    @Override
+    public Optional<Order> findById(long id) {
+        return orderRepository.findById(id);
+    }
 
     private BigDecimal calculateCustomerBalanceAfterPayment(Customer customer, Order order){
         return customer.getBalance().subtract(order.getPrice());
     }
 
+    @Override
+    public List<Order> getAllOrders() {
+        return orderRepository.findAll();
+    }
 }

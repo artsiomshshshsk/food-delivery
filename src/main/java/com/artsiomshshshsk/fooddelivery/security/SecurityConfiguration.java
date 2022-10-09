@@ -25,8 +25,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/v3/api-docs").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin();
+//                .formLogin();
+                .httpBasic();
     }
+
 
     @Bean(name = "JDBCdataSource")
     UserDetailsService dataSource(DataSource dataSource) {

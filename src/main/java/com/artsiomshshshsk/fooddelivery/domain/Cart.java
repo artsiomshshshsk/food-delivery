@@ -15,13 +15,10 @@ import java.util.List;
 public class Cart {
     private BigDecimal price;
     private List<OrderItem> orderItems;
-
     public boolean isEmpty(){
         return orderItems.isEmpty();
     }
-
     public void removeOrderItem(OrderItem orderItem){
         orderItems.remove(orderItem);
     }
-
 }

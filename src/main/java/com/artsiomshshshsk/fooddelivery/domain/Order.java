@@ -1,6 +1,8 @@
 package com.artsiomshshshsk.fooddelivery.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.persistence.*;
@@ -16,12 +18,13 @@ import java.util.List;
 @Table(name = "_ORDER")
 public class Order {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "increment")
     private Long id;
     @ManyToOne
     @JoinColumn(name = "customer_id")
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
+    @JsonIgnore
     private Customer customer;
     private BigDecimal price;
     @Column(name = "timestamp_created")

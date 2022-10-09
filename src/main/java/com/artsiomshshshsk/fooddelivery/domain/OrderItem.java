@@ -1,6 +1,8 @@
 package com.artsiomshshshsk.fooddelivery.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
+
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -14,7 +16,7 @@ import java.math.BigDecimal;
 @Table(name = "ORDER_ITEM")
 public class OrderItem {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "increment")
     private Long id;
     private int pieces;
     private BigDecimal price;
@@ -22,6 +24,7 @@ public class OrderItem {
     @JoinColumn(name = "order_id")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
+    @JsonIgnore
     private Order order;
     @OneToOne
     @JoinColumn(name = "food_id")

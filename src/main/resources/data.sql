@@ -16,7 +16,7 @@ INSERT INTO CUSTOMER(ID, EMAIL, PASSWORD, BALANCE, NAME) VALUES (1, 'a', 'a', 10
 (16, 'test_user14@epam.com', 'Fv84dVypppzUQF', 24, 'Test User 14'),
 (17, 'test_user15@epam.com', 'LWyjr58n9wbHqU', 3, 'Test User 15'),
 (18, 'test_user16@epam.com', 'yQnVdt2hYhB5Fp', 356, 'Test User 16'),
-(19, 'test_user17@epam.com', 'xx7hfcrcLSr979', 354.68, 'Test User 17'),
+(19, 'user', 'xx7hfcrcLSr979', 354.68, 'Test User 17'),
 (20, 'test_user18@epam.com', 't8bkVh79CZ84EK', 96.14, 'Test User 18');
 
 INSERT INTO FOOD(ID, CALORIE, CATEGORY, DESCRIPTION, NAME, PRICE) VALUES (1, 558, 'MEAL', 'Fideua', 'Fideua', 15),

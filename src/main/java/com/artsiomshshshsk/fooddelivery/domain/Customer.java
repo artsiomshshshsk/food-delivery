@@ -1,5 +1,6 @@
 package com.artsiomshshshsk.fooddelivery.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -20,11 +21,11 @@ public class Customer extends User {
     private Long id;
     private String name;
     private BigDecimal balance;
-
     @Transient
+    @JsonIgnore
     private Cart cart;
-
     @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
+    @JsonIgnore
     private List<Order> orders;
 
     @Builder
