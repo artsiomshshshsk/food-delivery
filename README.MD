@@ -1,6 +1,9 @@
 ## Food Delivery
 HATEOAS Driven REST API for Ordering food
+## Technology
+#### Spring Boot, Spring Data JPA, Spring Security 
 ## Run
+
 ```sh
 mvn install
 docker-compose build
