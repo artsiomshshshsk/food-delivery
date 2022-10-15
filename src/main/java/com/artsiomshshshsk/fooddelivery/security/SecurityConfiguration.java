@@ -22,6 +22,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/login",
                         "/swagger-resources/**",
                         "/swagger-ui/**",
+                        "/v3/api-docs/**",
                         "/v3/api-docs").permitAll()
                 .anyRequest().authenticated()
                 .and()
